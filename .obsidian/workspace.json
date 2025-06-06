@@ -1,0 +1,182 @@
+{
+  "main": {
+    "id": "d953f620cd6452ff",
+    "type": "split",
+    "children": [
+      {
+        "id": "a7e1a555bad4e72c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "55281d459820c356",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "tryhackme/The Game.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "The Game"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "535da974404a1fb6",
+    "type": "split",
+    "children": [
+      {
+        "id": "3f50256bd407b77c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d465fb6140f65ac1",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "a92a1597c23a8b01",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "7f49b7775d32aeef",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "4430c923df13cdf8",
+    "type": "split",
+    "children": [
+      {
+        "id": "f867ad86c51f46e3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "477d4637d9ab371d",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "tryhackme/The Game.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for The Game"
+            }
+          },
+          {
+            "id": "db27f730bb2afc8e",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "tryhackme/The Game.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from The Game"
+            }
+          },
+          {
+            "id": "fe0d3578a8f38dda",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "904fe7f6642f4eb0",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "tryhackme/The Game.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of The Game"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "d465fb6140f65ac1",
+  "lastOpenFiles": [
+    "tryhackme/Intro to LAN.md",
+    "tryhackme/The Game.md",
+    "tryhackme/What is Networking?.md",
+    "Pasted image 20250607005743.png",
+    "tryhackme/Careers in Cyber.md",
+    "tryhackme/Defensive Security Intro.md",
+    "tryhackme/Offensive Security Intro.md",
+    "tryhackme"
+  ]
+}
