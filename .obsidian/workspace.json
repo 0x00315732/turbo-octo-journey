@@ -20,8 +20,23 @@
               "icon": "lucide-file",
               "title": "Active Directory Basics"
             }
+          },
+          {
+            "id": "b6786e119044b437",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Basic Toolset.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Basic Toolset"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -168,9 +183,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "58db06730319b31f",
+  "active": "b6786e119044b437",
   "lastOpenFiles": [
     "Active Directory Basics.md",
+    "Basic Toolset.md",
+    "HackTheBox",
     "tryhackme/Search Skills.md",
     "tryhackme/Windows Fundamentals 3.md",
     "tryhackme/Windows Fundamentals 2.md",
@@ -187,7 +204,6 @@
     "tryhackme/Packets & Frames.md",
     "tryhackme/OSI Model.md",
     "tryhackme/Intro to LAN.md",
-    "Untitled",
     "tryhackme/The Game.md",
     "tryhackme/What is Networking?.md",
     "OverTheWire/Bandit/Bandit Level 0 → Level 1.md",
@@ -201,7 +217,6 @@
     "Pasted image 20250607005743.png",
     "tryhackme/Careers in Cyber.md",
     "tryhackme/Defensive Security Intro.md",
-    "tryhackme/Offensive Security Intro.md",
     "tryhackme"
   ]
 }
