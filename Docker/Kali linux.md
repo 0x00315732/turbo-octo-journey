@@ -125,3 +125,11 @@ docker run --rm -it kalilinux/kali-rolling
 ```
 
 ---
+
+Copy to container 
+
+```
+sudo docker cp file.txt kali-container:/files/
+```
+
+---

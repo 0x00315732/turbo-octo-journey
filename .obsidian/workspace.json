@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Basic Toolset.md",
+                "file": "Docker/Kali linux.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Basic Toolset"
+              "title": "Kali linux"
             }
           }
         ],
@@ -185,8 +185,10 @@
   },
   "active": "b6786e119044b437",
   "lastOpenFiles": [
+    "Docker/Ubuntu Docker.md",
+    "Docker/Kali linux.md",
     "Active Directory Basics.md",
-    "Basic Toolset.md",
+    "HackTheBox/Basic Toolset.md",
     "HackTheBox",
     "tryhackme/Search Skills.md",
     "tryhackme/Windows Fundamentals 3.md",
@@ -211,8 +213,6 @@
     "OverTheWire/Bandit/Bandit.md",
     "OverTheWire/Bandit",
     "OverTheWire",
-    "Docker/Kali linux.md",
-    "Docker/Ubuntu Docker.md",
     "Docker",
     "Pasted image 20250607005743.png",
     "tryhackme/Careers in Cyber.md",
