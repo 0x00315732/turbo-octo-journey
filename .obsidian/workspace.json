@@ -4,39 +4,38 @@
     "type": "split",
     "children": [
       {
-        "id": "92fe60cf88560f3b",
+        "id": "59817449fd86cbbc",
         "type": "tabs",
         "children": [
           {
-            "id": "58db06730319b31f",
+            "id": "39a79e75e64cac53",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Active Directory Basics.md",
+                "file": "Docker/PostgreSQL.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Active Directory Basics"
+              "title": "PostgreSQL"
             }
           },
           {
-            "id": "b6786e119044b437",
+            "id": "666b8bc22e23eab6",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Docker/Kali linux.md",
+                "file": "Docker/PostgreSQL.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Kali linux"
+              "title": "PostgreSQL"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -183,11 +182,24 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "b6786e119044b437",
+  "active": "39a79e75e64cac53",
   "lastOpenFiles": [
     "Docker/Ubuntu Docker.md",
+    "Docker/PostgreSQL.md",
+    "tryhackme/room/Anonforce.md",
+    "tryhackme/room/Basic Pentesting.md",
+    "tryhackme/room/Ignite.md",
+    "tryhackme/room/images",
+    "tryhackme/room",
+    "tryhackme/Active Directory Basics.md",
+    "Отчёт об ошибке.md",
+    "Утечка конфигураций сервера.md",
+    "Screenshot from 2025-07-05 16-22-39.png",
+    "Screenshot from 2025-07-05 16-21-20.png",
+    "Screenshot from 2025-07-05 16-12-48.png",
+    "Screenshot from 2025-07-05 16-12-28.png",
+    "tryhackme/DNS in Detail.md",
     "Docker/Kali linux.md",
-    "Active Directory Basics.md",
     "HackTheBox/Basic Toolset.md",
     "HackTheBox",
     "tryhackme/Search Skills.md",
@@ -201,22 +213,15 @@
     "Pasted image 20250621123614.png",
     "tryhackme/How Websites Work.md",
     "tryhackme/HTTP in Detail.md",
-    "tryhackme/DNS in Detail.md",
     "tryhackme/Extending Your Network.md",
     "tryhackme/Packets & Frames.md",
     "tryhackme/OSI Model.md",
     "tryhackme/Intro to LAN.md",
     "tryhackme/The Game.md",
-    "tryhackme/What is Networking?.md",
-    "OverTheWire/Bandit/Bandit Level 0 → Level 1.md",
-    "OverTheWire/Bandit/Bandit Level 1 → Level 2.md",
-    "OverTheWire/Bandit/Bandit.md",
     "OverTheWire/Bandit",
     "OverTheWire",
     "Docker",
     "Pasted image 20250607005743.png",
-    "tryhackme/Careers in Cyber.md",
-    "tryhackme/Defensive Security Intro.md",
     "tryhackme"
   ]
 }
