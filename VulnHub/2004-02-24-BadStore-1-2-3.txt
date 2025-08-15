@@ -1,0 +1,208 @@
+BadStore Vulnerability Testing Checklist
+
+1. Reconnaissance
+
+- Discover IP address using tools like netdiscover or arp-scan
+
+i did use netdiscover
+
+netdiscover 
+arp-scan -l -x
+
+- Scan open ports with nmap (-sS -sV -A)
+
+nmap -sS -sV -A -Pn 0.0.0.0
+
+- Perform banner grabbing (nc, telnet, curl)
+
+curl 0.0.0.0
+
+- Identify web services and versions
+
+80/tcp   open  http     Apache httpd 1.3.28 ((Unix) mod_ssl/2.8.15 OpenSSL/0.9.7c
+443/tcp  open  ssl/http Apache httpd 1.3.28 ((Unix) mod_ssl/2.8.15 OpenSSL/0.9.7c
+3306/tcp open  mysql    MySQL 4.1.7-standard
+
+2. Web Application Enumeration
+
+- Perform directory brute-forcing with gobuster, dirb, or ffuf
+
+gobuster dir -u 0.0.0.0 /usr/share/dirbuster/wordlists/directory-list-lowercase-2.3-medium.txt
+
+===============================================================
+Gobuster v3.6
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://192.168.0.109
+[+] Method:                  GET
+[+] Threads:                 10
+[+] Wordlist:                /usr/share/dirbuster/wordlists/directory-list-lowercase-2.3-medium.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.6
+[+] Timeout:                 10s
+===============================================================
+Starting gobuster in directory enumeration mode
+===============================================================
+/index                (Status: 200) [Size: 3583]
+/images               (Status: 301) [Size: 302] [--> http://192.168.0.109/images/]
+/backup               (Status: 301) [Size: 302] [--> http://192.168.0.109/backup/]
+/favicon              (Status: 200) [Size: 1334]
+/robots               (Status: 200) [Size: 316]
+/supplier             (Status: 301) [Size: 304] [--> http://192.168.0.109/supplier/]
+Progress: 207643 / 207644 (100.00%)
+===============================================================
+Finished
+===============================================================
+
+dirb -u http://0.0.0.0 -w /usr/share/dirb/wordlists/big.txt
+
+GENERATED WORDS: 20458                                                         
+
+---- Scanning URL: http://192.168.0.109/ ----
+==> DIRECTORY: http://192.168.0.109/backup/                                                                                                                                                   
++ http://192.168.0.109/cgi-bin/ (CODE:403|SIZE:276)                                                                                                                                           
++ http://192.168.0.109/favicon (CODE:200|SIZE:1334)                                                                                                                                           
++ http://192.168.0.109/favicon.ico (CODE:200|SIZE:1334)                                                                                                                                       
+==> DIRECTORY: http://192.168.0.109/images/                                                                                                                                                   
++ http://192.168.0.109/index (CODE:200|SIZE:3583)                                                                                                                                             
++ http://192.168.0.109/robots (CODE:200|SIZE:316)                                                                                                                                             
++ http://192.168.0.109/robots.txt (CODE:200|SIZE:316)                                                                                                                                         
+==> DIRECTORY: http://192.168.0.109/supplier/                                                                                                                                                 
+                                                                                                                                                                                              
+---- Entering directory: http://192.168.0.109/backup/ ----
+(!) WARNING: Directory IS LISTABLE. No need to scan it.                        
+    (Use mode '-w' if you want to scan it anyway)
+                                                                                                                                                                                              
+---- Entering directory: http://192.168.0.109/images/ ----
+(!) WARNING: Directory IS LISTABLE. No need to scan it.                        
+    (Use mode '-w' if you want to scan it anyway)
++ http://192.168.0.109/images/1000 (CODE:200|SIZE:2804)                                                                                                                                       
++ http://192.168.0.109/images/1001 (CODE:200|SIZE:2808)                                                                                                                                       
++ http://192.168.0.109/images/1009 (CODE:200|SIZE:3927)                                                                                                                                       
++ http://192.168.0.109/images/amex (CODE:200|SIZE:1509)                                                                                                                                       
++ http://192.168.0.109/images/cart (CODE:200|SIZE:607)                                                                                                                                        
++ http://192.168.0.109/images/discover (CODE:200|SIZE:1756)                                                                                                                                   
++ http://192.168.0.109/images/index (CODE:200|SIZE:268)                                                                                                                                       
++ http://192.168.0.109/images/mastercard (CODE:200|SIZE:1746)                                                                                                                                 
++ http://192.168.0.109/images/store1 (CODE:200|SIZE:67567)                                                                                                                                    
++ http://192.168.0.109/images/visa (CODE:200|SIZE:1484)                                                                                                                                       
+                                                                                                                                                                                              
+---- Entering directory: http://192.168.0.109/supplier/ ----
+(!) WARNING: Directory IS LISTABLE. No need to scan it.                        
+    (Use mode '-w' if you want to scan it anyway)
++ http://192.168.0.109/supplier/accounts (CODE:200|SIZE:215)                                                                                                                                  
+                                                                                                                                                                                              
+-----------------
+END_TIME: Sat Jul 26 12:15:15 2025
+DOWNLOADED: 81832 - FOUND: 17
+
+ffuf -w /usr/share/dirb/wordlists/big.txt -u http://0.0.0.0/FUZZ  -c 
+
+
+        /'___\  /'___\           /'___\       
+       /\ \__/ /\ \__/  __  __  /\ \__/       
+       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\      
+        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/      
+         \ \_\   \ \_\  \ \____/  \ \_\       
+          \/_/    \/_/   \/___/    \/_/       
+
+       v2.1.0-dev
+________________________________________________
+
+ :: Method           : GET
+ :: URL              : http://192.168.0.109/FUZZ
+ :: Wordlist         : FUZZ: /usr/share/dirb/wordlists/big.txt
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200-299,301,302,307,401,403,405,500
+________________________________________________
+
+.htpasswd               [Status: 403, Size: 277, Words: 20, Lines: 11, Duration: 6954ms]
+.htaccess               [Status: 403, Size: 277, Words: 20, Lines: 11, Duration: 2402ms]
+backup                  [Status: 301, Size: 302, Words: 19, Lines: 10, Duration: 232ms]
+cgi-bin/                [Status: 403, Size: 276, Words: 20, Lines: 11, Duration: 350ms]
+favicon                 [Status: 200, Size: 1334, Words: 1, Lines: 1, Duration: 14ms]
+favicon.ico             [Status: 200, Size: 1334, Words: 1, Lines: 1, Duration: 204ms]
+images                  [Status: 301, Size: 302, Words: 19, Lines: 10, Duration: 159ms]
+index                   [Status: 200, Size: 3583, Words: 728, Lines: 90, Duration: 507ms]
+robots                  [Status: 200, Size: 316, Words: 23, Lines: 16, Duration: 168ms]
+robots.txt              [Status: 200, Size: 316, Words: 23, Lines: 16, Duration: 264ms]
+supplier                [Status: 301, Size: 304, Words: 19, Lines: 10, Duration: 104ms]
+:: Progress: [20469/20469] :: Job [1/1] :: 142 req/sec :: Duration: [0:02:29] :: Errors: 0 ::
+
+- Analyze HTML source code for comments and hidden fields
+
+
+
+- Check for robots.txt or sitemap.xml
+- Identify technologies using whatweb or wappalyzer
+
+**3. Authentication Attacks**
+
+* Test default credentials (admin\:admin, guest\:guest, etc)
+* Brute-force login using hydra, Burp Suite, or wfuzz
+* Check for password reset vulnerabilities
+* Search source code for hardcoded credentials
+
+**4. Injection Attacks**
+
+* Test for SQL Injection (manual and with sqlmap)
+* Attempt command injection
+* Test for HTML or JavaScript injection (reflected and stored XSS)
+
+**5. Cross-Site Scripting (XSS)**
+
+* Test for reflected XSS using basic payloads (e.g., <script>alert(1)</script>)
+* Test for stored XSS in comment forms or input fields
+* Check for DOM-based XSS in JavaScript
+* Try bypass techniques using onerror, img src, etc
+
+**6. Cross-Site Request Forgery (CSRF)**
+
+* Identify functions without CSRF protection (such as password changes)
+* Create CSRF proof-of-concept forms
+
+**7. File Upload Vulnerabilities**
+
+* Try uploading PHP, HTML, or disguised PHP files like .php.jpg
+* Check for client-side file type restrictions
+* Locate uploaded files and attempt to execute them
+
+**8. File Inclusion**
+
+* Test for Local File Inclusion using path traversal
+* Test for Remote File Inclusion if the server allows it
+* Try log poisoning or LFI to RCE
+
+**9. Sensitive Information Disclosure**
+
+* Look for sensitive data such as emails, passwords, or credit card numbers
+* Search for backup files such as .bak, .old, .zip
+* Check for exposed folders like .git or .svn
+
+**10. Exploitation**
+
+* Upload and access web shells such as c99 or php-reverse-shell
+* Gain reverse shell access via command injection
+* Use LFI with /proc/self/environ or logs to get RCE
+
+**11. Privilege Escalation**
+
+* Identify current user and privileges using whoami or id
+* Gather system info with uname -a and other enumeration commands
+* Look for misconfigured sudo permissions or SUID binaries
+* Search for cron jobs or stored credentials in scripts
+
+**12. Reporting**
+
+* Take screenshots of each step and result
+* Document tools, payloads, and methods used
+* List all vulnerabilities found and exploited
+* Include post-exploitation findings like flags or hashes
+
+---
+
+Would you like me to generate a `.txt` version you can download?
+

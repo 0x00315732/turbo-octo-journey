@@ -1,0 +1,137 @@
+---
+
+## ✅ **UltimateLAMP: 0.2 Hacking Checklist**
+
+---
+
+### 🧭 1. **Reconnaissance**
+
+* [ ] 🔍 **Find target IP address**
+  Use: `netdiscover` or `arp-scan`
+
+* [ ] 🛰️ **Scan ports and services**
+  Use:
+
+  ```bash
+  nmap -sC -sV -oN initial.txt <target-ip>
+  nmap -p- <target-ip>
+  ```
+
+* [ ] 🌐 **Check open ports**
+  Typical ones:
+
+  * `22` (SSH)
+  * `80` (HTTP)
+  * `3306` (MySQL)
+
+---
+
+### 🌐 2. **Web Enumeration**
+
+* [ ] 🕵️ Visit `http://<target-ip>` in your browser
+
+* [ ] 📁 **Directory brute-force**
+  Use:
+
+  ```bash
+  gobuster dir -u http://<target-ip> -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+  ```
+
+* [ ] 🧪 **Check for web apps**
+
+  * Look for WordPress, phpMyAdmin, custom CMS, file upload pages
+  * Check HTML comments, robots.txt, etc.
+
+---
+
+### 🔓 3. **Initial Access**
+
+* [ ] 🔐 **Try default credentials** on any login forms
+  (e.g., `admin:admin`, `root:root`, etc.)
+
+* [ ] 💣 **Test for vulnerabilities** in apps
+
+  * SQL Injection
+  * File Upload
+  * Local File Inclusion (LFI)
+
+* [ ] 🐚 **Upload reverse shell** (if file upload works)
+
+  * Use: `php-reverse-shell.php`
+  * Set listener:
+
+    ```bash
+    nc -lvnp 4444
+    ```
+
+* [ ] 📥 **Catch the reverse shell**
+  You should now be a limited user (e.g., `www-data`)
+
+---
+
+### 🔼 4. **Privilege Escalation**
+
+* [ ] 🧑‍💻 **Check user info**
+
+  ```bash
+  whoami
+  id
+  hostname
+  ```
+
+* [ ] 📂 **Enumerate system**
+  Use:
+
+  ```bash
+  sudo -l
+  find / -perm -u=s -type f 2>/dev/null
+  ps aux
+  ```
+
+* [ ] 📝 **Check for credentials**
+
+  * `.bash_history`
+  * `config.php`, `.env`, `wp-config.php`, etc.
+  * `mysql` creds in PHP files
+
+* [ ] 📈 **Exploit SUID or sudo**
+
+  * If `sudo` access: try `sudo su`
+  * If vulnerable binary: use GTFOBins
+    [https://gtfobins.github.io/](https://gtfobins.github.io/)
+
+* [ ] 🧨 **Kernel Exploit (optional)**
+  If Linux kernel is very old: search exploit (e.g., Dirty COW)
+
+---
+
+### 🏁 5. **Get the Flags**
+
+* [ ] 🧍 **User flag**
+  Check: `/home/<username>/flag.txt`
+
+* [ ] 👑 **Root flag**
+  Check: `/root/flag.txt`
+
+---
+
+### 📓 6. **Bonus – Clean Notes & Report**
+
+* [ ] Save:
+
+  * All credentials found
+  * All commands used
+  * Paths to exploited pages or binaries
+
+---
+
+## ⚠️ Tips
+
+* Don’t overthink—this is a beginner-to-intermediate room.
+* Focus on web exploitation and privilege escalation.
+* If stuck, re-check directories and known default credentials.
+
+---
+
+Would you like me to turn this into a printable checklist or a Markdown file for easier use?
+

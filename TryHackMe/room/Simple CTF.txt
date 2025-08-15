@@ -1,0 +1,11 @@
+First let's scan all ports 
+
+nmap -p1-1000 -v -A -Pn 0.0.0.0
+
+there is two ports is open
+
+let's search a verlnirablity good find some cve link to exploit 
+
+https://github.com/Doc0x1/CVE-2019-9053-Python3.git
+
+

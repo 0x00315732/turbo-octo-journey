@@ -5,7 +5,7 @@
 ### **1. Create a Docker volume for persistent PostgreSQL data**
 
 ```bash
-docker volume create pgdata
+sudo docker volume create pgdata
 ```
 
 This volume will persist PostgreSQL database data across container restarts.
@@ -15,28 +15,28 @@ This volume will persist PostgreSQL database data across container restarts.
 ### **2. Create and run the PostgreSQL container, mounting the volume**
 
 ```bash
-docker run -d \
+sudo docker run -d \
   --name postgres-container \
-  -e POSTGRES_USER=myuser \
-  -e POSTGRES_PASSWORD=mypassword \
-  -e POSTGRES_DB=mydatabase \
+  -e POSTGRES_USER=user \
+  -e POSTGRES_PASSWORD=password \
+  -e POSTGRES_DB=database \
   -v pgdata:/var/lib/postgresql/data \
   -p 5432:5432 \
-  postgres
+  pgdata
 ```
 
 - Replace:
-    - `myuser` → Your PostgreSQL username
-    - `mypassword` → Your PostgreSQL password
-    - `mydatabase` → Initial database name
-- Volume `pgdata` stores database files.
+    - `user` → Your PostgreSQL username
+    - `password` → Your PostgreSQL password
+    - `database` → Initial database name
+- Volume `postgres` stores database files.
 
 ---
 
 ### **3. Connect to PostgreSQL inside the container**
 
 ```bash
-docker exec -it postgres-container psql -U myuser -d mydatabase
+docker exec -it postgres-container psql -U user -d database
 ```
 
 You’ll enter the PostgreSQL interactive terminal (`psql`).
@@ -86,19 +86,19 @@ docker logs postgres-container
 ### Backup database to a file:
 
 ```bash
-docker exec postgres-container pg_dump -U myuser mydatabase > backup.sql
+docker exec postgres-container pg_dump -U user database > backup.sql
 ```
 
 ### Restore database from a file:
 
 ```bash
-cat backup.sql | docker exec -i postgres-container psql -U myuser -d mydatabase
+cat backup.sql | docker exec -i postgres-container psql -U user -d database
 ```
 
 ### Run in interactive mode (rare for PostgreSQL):
 
 ```bash
-docker run -it --rm postgres bash
+docker run -it --rm postgres-container bash
 ```
 
 ---

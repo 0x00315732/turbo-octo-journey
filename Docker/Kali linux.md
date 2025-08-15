@@ -1,135 +1,42 @@
 
----
-
-## 🐳 Persistent Kali Linux Docker Container Setup
-
-### ✅ **Assumptions:**
-
-- Docker is installed and running.
-- You're using the official Kali Docker image: [`kalilinux/kali-rolling`](https://hub.docker.com/r/kalilinux/kali-rolling).
-
----
-
-### **1. Create a Docker volume for persistent storage**
-
-This will persist changes inside the container, especially for the `/root` directory (your Kali user's home directory):
+1. Create a volume for the container:
 
 ```bash
-docker volume create kali-root
+sudo docker volume create kali-root
 ```
 
----
-
-### **2. Run the Kali Linux container with the volume mounted**
+2. Create a container and mount the volume:
 
 ```bash
-docker run -it --name kali-container -v kali-root:/root kalilinux/kali-rolling
+sudo docker run -it --name kali-container -v kali-root:/root kalilinux/kali-rolling
 ```
 
-- `-it`: interactive terminal
-- `--name`: assigns a name to the container
-- `-v`: mounts the volume to `/root`
-
----
-
-### **3. Inside the container: update and install tools**
-
-Update and install any Kali packages you want:
+3. Install any packages that you need:
 
 ```bash
-apt update && apt -y upgrade
-apt install -y kali-linux-headless
-apt install -y <your-tools>
+apt update && apt -y install kali-linux-headless  
 ```
 
-For example:
+4. Save your changes:
 
-```bash
-apt install -y nmap metasploit-framework
 ```
-
----
-
-### **4. Exit the container (to save and stop it)**
-
-```bash
 exit
 ```
 
-Your container is stopped but not deleted.
-
----
-
-### **5. Start the container again later**
-
-```bash
-docker start kali-container
-```
-
----
-
-### **6. Reattach to the running container**
-
-```bash
-docker attach kali-container
-```
-
-To **detach without stopping** the container:
-
-> Press `Ctrl + P`, then `Ctrl + Q`
-
----
-
-## 🔧 Additional Docker Options for Kali
-
-### Expose Ports (e.g., for web servers, reverse shells, etc.)
-
-```bash
-docker run -it -p 4444:4444 --name kali-container -v kali-root:/root kalilinux/kali-rolling
-```
-
-This maps port `4444` on the container to `4444` on the host.
-
----
-
-### Mount More Volumes
-
-For example, mount a local tools directory:
-
-```bash
-docker run -it -v /home/user/tools:/tools -v kali-root:/root --name kali-container kalilinux/kali-rolling
-```
-
----
-
-### Run in Detached Mode (Background)
-
-```bash
-docker run -dit --name kali-container -v kali-root:/root kalilinux/kali-rolling
-```
-
-Then attach with:
-
-```bash
-docker attach kali-container
-```
-
----
-
-### Auto-remove (non-persistent session)
-
-If you don’t need persistence:
-
-```bash
-docker run --rm -it kalilinux/kali-rolling
-```
-
----
-
-Copy to container 
+5. Start the container again:
 
 ```
-sudo docker cp file.txt kali-container:/files/
+sudo docker start kali-container
 ```
 
----
+6. Attach to the Docker container :
+
+```
+sudo docker attach kali-container
+```
+
+7. Log into container
+
+```
+sudo docker exec -it kali-container /bin/bash
+```
