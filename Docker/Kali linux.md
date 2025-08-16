@@ -8,7 +8,7 @@ sudo docker volume create kali-root
 2. Create a container and mount the volume:
 
 ```bash
-sudo docker run -it --name kali-container -v kali-root:/root kalilinux/kali-rolling
+sudo docker run -it --name kali-container -v kali-root:/root kalilinux/kali-rolling:latest
 ```
 
 3. Install any packages that you need:

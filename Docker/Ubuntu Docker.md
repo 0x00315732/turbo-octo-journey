@@ -6,7 +6,7 @@
 ### **1. Create a Docker volume for persistent data**
 
 ```bash
-docker volume create ubuntu-root
+sudo docker volume create ubuntu-root
 ```
 
 This volume will persist your container’s `/root` directory across restarts.
@@ -16,7 +16,7 @@ This volume will persist your container’s `/root` directory across restarts.
 ### **2. Create and run the Ubuntu container, mounting the volume**
 
 ```bash
-docker run -it --name ubuntu-container -v ubuntu-root:/root ubuntu
+sudo docker run -it --name ubuntu-container -v ubuntu-root:/root ubuntu:latest
 ```
 
 This starts an Ubuntu container and mounts the volume to `/root`.
@@ -26,19 +26,16 @@ This starts an Ubuntu container and mounts the volume to `/root`.
 ### **3. Inside the container: Update & install packages**
 
 ```bash
-apt update && apt -y upgrade
-apt install -y <package-name>
+apt update -y
 ```
-
-Example:
 
 ```bash
-apt install -y net-tools curl vim
+apt install -y adduser sudo
 ```
 
----
-
-### **4. Exit the container to save changes**
+```bash
+adduser user
+```
 
 ```bash
 exit
@@ -51,7 +48,7 @@ The container stops but its state and volume are saved.
 ### **5. Restart the container**
 
 ```bash
-docker start ubuntu-container
+sudo docker start ubuntu-container
 ```
 
 ---
@@ -59,7 +56,7 @@ docker start ubuntu-container
 ### **6. Reattach to the running container**
 
 ```bash
-docker attach ubuntu-container
+sudo docker attach ubuntu-container
 ```
 
 To detach from it without stopping:
@@ -68,34 +65,14 @@ To detach from it without stopping:
 
 ---
 
-## 🔧 Additional Docker Tips
-
-### Mount more volumes (optional)
+Login as root user
 
 ```bash
--v my-data:/data
+sudo docker exec -it ubuntu-container /bin/bash
 ```
 
-Mount custom volumes for things like projects or logs.
-
-### Expose ports (for running services)
+Login as regular user
 
 ```bash
--p 8080:80
+sudo docker exec -it --user user ubuntu-container /bin/bash 
 ```
-
-Expose port 80 inside the container as 8080 on the host.
-
-### Detached mode (run in background)
-
-```bash
-docker run -dit --name ubuntu-container -v ubuntu-root:/root ubuntu
-```
-
-### Automatically remove container on exit (non-persistent)
-
-```bash
-docker run --rm -it ubuntu
-```
-
----
