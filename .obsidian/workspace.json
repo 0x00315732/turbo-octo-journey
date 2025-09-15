@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "bdc23f5ed52b14a5",
+        "id": "6ace3859b3b344e9",
         "type": "tabs",
         "children": [
           {
-            "id": "76b64f8c3475de90",
+            "id": "3ea8838694c8b6e5",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TryHackMe/Dav.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Dav"
+              "title": "New tab"
             }
           }
         ]
@@ -169,8 +165,26 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "76b64f8c3475de90",
+  "active": "3ea8838694c8b6e5",
   "lastOpenFiles": [
+    "Untitled.base",
+    "Untitled 1.canvas",
+    "Untitled.canvas",
+    "Dreaming.md",
+    "Agent T.md",
+    "Oracle 9.md",
+    "TryHackMe/Lian_Yu.md",
+    "TryHackMe/Reversing ELF.md",
+    "TryHackMe/Ninja Skills.md",
+    "TryHackMe/Pickle Rick.md",
+    "Software/Software Architecture/Software Architecture.md",
+    "Software/Software Architecture",
+    "Software",
+    "TryHackMe/Blueprint.md",
+    "Docker/PostgreSQL.md",
+    "VulnHub/Sumo 1.md",
+    "Docker/Kali linux.md",
+    "TryHackMe/Dav.md",
     "TryHackMe/Wgel CTF.md",
     "CTF/2025/08/Blue Arena/Flag in Plain Sight.md",
     "CTF/2025/08/Blue Arena/Blue Arena.md",
@@ -183,10 +197,6 @@
     "TryHackMe/room/Anonforce.md",
     "TryHackMe/room/Detecting Web Shells.md",
     "TryHackMe/Agent Sudo.md",
-    "TryHackMe/Simple CTF.md",
-    "TryHackMe/Search Skills.md",
-    "TryHackMe/Poster.md",
-    "TryHackMe/Active Directory Basics.md",
     "CTF/2025/08/TFC CTF 2025/Pasted image 20250829163945.png",
     "CTF/2025/08/TFC CTF 2025/Pasted image 20250829163319.png",
     "CTF/2025/08/TFC CTF 2025",
@@ -194,22 +204,9 @@
     "CTF/2025",
     "CTF/2025/08/Blue Arena",
     "CTF/2025/08/Blue Arena/Pasted image 20250829114226.png",
-    "Tools/Wifite.md",
     "CTF",
-    "Tools/Resource.md",
-    "TryHackMe/Dav.md",
-    "TryHackMe/Library.md",
-    "Docker/CI-CD.md",
     "Tools",
-    "TryHackMe/Thompson.md",
-    "Отчёт о необходимости удаления ненужных файлов с боевого сервера.md",
-    "Отчёт о уязвимости Небезопасная загрузка файлов.md",
-    "TryHackMe/room/Lo-Fi.md",
-    "Docker/Ubuntu Docker.md",
     "Languages/SQL",
-    "Languages",
-    "tryhackme/room/images",
-    "TryHackMe/room",
     "Screenshot from 2025-07-05 16-22-39.png",
     "Screenshot from 2025-07-05 16-21-20.png",
     "Screenshot from 2025-07-05 16-12-48.png",
