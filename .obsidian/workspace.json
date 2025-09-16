@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "6ace3859b3b344e9",
+        "id": "2643d3fe7f6c3775",
         "type": "tabs",
         "children": [
           {
-            "id": "3ea8838694c8b6e5",
+            "id": "fafb2eb60d4b4a13",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "TryHackMe/Dreaming.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Dreaming"
             }
           }
         ]
@@ -162,17 +166,20 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "obsidian-git:Open Git source control": false
     }
   },
-  "active": "3ea8838694c8b6e5",
+  "active": "d465fb6140f65ac1",
   "lastOpenFiles": [
-    "Untitled.base",
+    "TryHackMe/room/Ignite.md",
+    "TryHackMe/room/Source.md",
+    "TryHackMe/Dreaming.md",
     "Untitled 1.canvas",
     "Untitled.canvas",
-    "Dreaming.md",
-    "Agent T.md",
-    "Oracle 9.md",
+    "Untitled.base",
+    "TryHackMe/Agent T.md",
+    "TryHackMe/Oracle 9.md",
     "TryHackMe/Lian_Yu.md",
     "TryHackMe/Reversing ELF.md",
     "TryHackMe/Ninja Skills.md",
@@ -189,10 +196,8 @@
     "CTF/2025/08/Blue Arena/Flag in Plain Sight.md",
     "CTF/2025/08/Blue Arena/Blue Arena.md",
     "CTF/2025/08/TFC CTF 2025/Full Weak Engineer CTF 2025.md",
-    "TryHackMe/room/Ignite.md",
     "TryHackMe/Kostanai.md",
     "TryHackMe/room/MD2PDF.md",
-    "TryHackMe/room/Source.md",
     "TryHackMe/room/Basic Pentesting.md",
     "TryHackMe/room/Anonforce.md",
     "TryHackMe/room/Detecting Web Shells.md",
